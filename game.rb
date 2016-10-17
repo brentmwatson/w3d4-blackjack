@@ -50,15 +50,13 @@ class Game
       puts ' Dealer has Backjack! Dealer wins.'
     elsif player_current_hand_score < 21
       want_to_be_delt = 'flub'
-      while want_to_be_delt != 'no'
-        while player_current_hand_score < 21
+      while want_to_be_delt != 'no' && player_current_hand_score < 21
           puts "Would you like a 'hit?'"
           puts 'Enter option: yes OR no'
           want_to_be_delt = gets.chomp.downcase # get/store variable???
           validate_hit want_to_be_delt
           player_hand = player_current_hand_score
           display_game
-        end
       end
     elsif player_current_hand_score == 21
       puts 'You have Blackjack! You Win!'
