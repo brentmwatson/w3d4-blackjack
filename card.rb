@@ -23,4 +23,7 @@ class Card
       self.value = face.to_i
     end
   end
+  def to_s
+    "#{@face} of #{@suit}"
+  end
 end
