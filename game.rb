@@ -50,11 +50,11 @@ class Game
     elsif player_current_hand_score < 21
       want_to_be_delt = 'flub'
       while want_to_be_delt != 'no' && player_current_hand_score < 21
-          puts "Would you like a 'hit?'"
-          puts 'Enter option: yes OR no'
-          want_to_be_delt = gets.chomp.downcase # get/store variable???
-          validate_hit want_to_be_delt
-          display_game
+        puts "Would you like a 'hit?'"
+        puts 'Enter option: yes OR no'
+        want_to_be_delt = gets.chomp.downcase # get/store variable???
+        validate_hit want_to_be_delt
+        display_game
       end
     elsif player_current_hand_score == 21
       puts 'You have Blackjack! You Win!'
@@ -95,7 +95,8 @@ class Game
 
   def display_game_end
     # show player
-    puts "Dealer hand: #{hand_simplify(dealer_hand)}" # how to diplay all index in array
+    # how to diplay all index in array
+    puts "Dealer hand: #{hand_simplify(dealer_hand)}"
     puts "You're hand: #{hand_simplify(player_hand)}"
     puts '------------------------------------'
     puts "You are at: #{player_current_hand_score}\n\n"
