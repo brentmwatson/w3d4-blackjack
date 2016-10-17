@@ -86,7 +86,8 @@ class Game
 
   def display_game
     # show player
-    puts "Dealer showing: #{hand_simplify(dealer_hand.drop(1))}" # how to diplay all index in array
+    # how to diplay all index in array
+    puts "Dealer showing: #{hand_simplify(dealer_hand.drop(1))}"
     puts "You're Showing: #{hand_simplify(player_hand.drop(1))}"
     puts "Your hand: #{player_hand.fetch(0)}"
     puts '------------------------------------'
