@@ -14,6 +14,7 @@
 # =>          User Selection Validation Section
 # **************************************************
 require_relative 'deck'
+require 'pry'
 
 class Game
   attr_accessor :deck,
@@ -42,8 +43,6 @@ class Game
       dealer_hand << deck.deal
     end
     # score cards and pass into local variables
-    player_hand = player_current_hand_score
-    dealer_hand = dealer_current_hand_score
     # Am I writing over my variables ni the array to be a single score number?
     display_game
     if dealer_current_hand_score == 21
@@ -55,7 +54,6 @@ class Game
           puts 'Enter option: yes OR no'
           want_to_be_delt = gets.chomp.downcase # get/store variable???
           validate_hit want_to_be_delt
-          player_hand = player_current_hand_score
           display_game
       end
     elsif player_current_hand_score == 21
@@ -64,7 +62,6 @@ class Game
     elsif dealer_current_hand_score < 16
       while dealer_current_hand_score < 16
         dealer_hand << deck.deal
-        dealer_hand = dealer_current_hand_score
         puts 'Dealer Hits!'
       end
       display_game
@@ -91,7 +88,7 @@ class Game
     # show player
     puts "Dealer showing: #{hand_simplify(dealer_hand.drop(1))}" # how to diplay all index in array
     puts "You're Showing: #{hand_simplify(player_hand.drop(1))}"
-    puts "You hand: #{player_hand.fetch(0)}"
+    puts "Your hand: #{player_hand.fetch(0)}"
     puts '------------------------------------'
     puts "You are at: #{player_current_hand_score}\n\n"
   end
