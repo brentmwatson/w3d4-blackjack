@@ -1,13 +1,12 @@
-require_relative "card"
+require_relative 'card'
 
 class Deck
-
   attr_accessor :cards
 
   def initialize
-      self.cards = []
-      make_cards
-      shuffle
+    self.cards = []
+    make_cards
+    shuffle
   end
 
   def make_cards
@@ -21,7 +20,6 @@ class Deck
     end
   end
 
-
   def deal
     cards.shift
   end
@@ -29,5 +27,4 @@ class Deck
   def shuffle
     cards.shuffle!
   end
-
 end
