@@ -130,7 +130,7 @@ class Game
       player_hand << deck.deal
       puts "You are at: #{player_current_hand_score}\n\n"
     elsif want_to_be_delt == "no"
-
+#NEED SOMETHING HERE Eternal LOOP
     else
       puts "Please enter 'Yes' or 'No'"
       want_to_be_delt = gets.chomp.downcase #get/store variable???
